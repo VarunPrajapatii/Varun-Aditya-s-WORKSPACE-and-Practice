@@ -27,7 +27,7 @@ int main()
 
 void mergearray(int a[], int b[], int n)
 {
-    int i=0, j=0, c[n], k=0;
+    int i=0, j=0, c[2*n], k=0;
     while(i!=(n-1) && j!=(n-1))
     {
         if(a[i]<=b[j])
@@ -58,7 +58,7 @@ void mergearray(int a[], int b[], int n)
             j++;
         }
     }
-    for(i=0; i<n; i++)
+    for(i=0; i<2*n; i++)
     {
         printf("%d ", c[i]);
     }
