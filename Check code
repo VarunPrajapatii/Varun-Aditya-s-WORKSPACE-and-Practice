@@ -1,0 +1,65 @@
+// 9. Write a function in C to merge two arrays of the same size sorted in descending order.
+
+#include<stdio.h>
+
+void mergearray(int [], int [], int);
+
+int main()
+{
+    int n;
+    printf("Enter size of one of same two arrays: ");
+    scanf("%d", &n);
+    int a[n], b[n], i;
+    printf("Enter elements of first array in descending order: ");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter elements of second array in descending order: ");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &b[i]);
+    }
+    mergearray(a,b,n);
+
+
+}
+
+void mergearray(int a[], int b[], int n)
+{
+    int i=0, j=0, c[n], k=0;
+    while(i!=(n-1) && j!=(n-1))
+    {
+        if(a[i]<=b[j])
+        {
+            c[k]=a[i];
+            k++;
+            i++;
+        }
+        else
+        {
+            c[k]=b[j];
+            k++;
+            j++;
+        }
+    }
+    while(i<(n-1) || j<(n-1))
+    {
+        while(i<(n-1))
+        {
+            c[k]=a[i];
+            k++;
+            i++;
+        }
+        while(j<(n-1))
+        {
+            c[k]=b[j];
+            k++;
+            j++;
+        }
+    }
+    for(i=0; i<n; i++)
+    {
+        printf("%d ", c[i]);
+    }
+}
